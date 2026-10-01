@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Faqih Maulana | Backend Engineer & Web Developer</title>
+<meta name="description" content="Portofolio Muhammad Faqih Maulana, Backend Engineer dan Web Developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F2EFFF;--ink:#17133A;--muted:#5E5990;--glass:rgba(255,255,255,.84);--line:rgba(90,70,210,.2);--accent:#6A55F5;--accent2:#F0604F;--soft:rgba(106,85,245,.12);--on:#fff;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C0A1F;--ink:#F1EEFF;--muted:#A9A3C9;--glass:rgba(24,20,60,.8);--line:rgba(160,150,255,.22);--accent:#9A8BFF;--accent2:#FF7A6B;--soft:rgba(154,139,255,.16);--on:#0C0A1F}}
+:root[data-theme="dark"]{--bg:#0C0A1F;--ink:#F1EEFF;--muted:#A9A3C9;--glass:rgba(24,20,60,.8);--line:rgba(160,150,255,.22);--accent:#9A8BFF;--accent2:#FF7A6B;--soft:rgba(154,139,255,.16);--on:#0C0A1F}
+html{height:100%;scroll-padding-top:5rem;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Sora",system-ui,sans-serif}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,footer{position:relative;z-index:1}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+header.top{position:fixed;z-index:10;top:calc(env(safe-area-inset-top,0px) + .75rem);left:50%;transform:translateX(-50%);max-width:calc(100% - 1.5rem);background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:.35rem .5rem}
+header.top nav{display:flex;gap:.15rem;overflow-x:auto;scrollbar-width:none}
+header.top nav::-webkit-scrollbar{display:none}
+header.top a{white-space:nowrap;text-decoration:none;font-size:.88rem;padding:.45rem .9rem;border-radius:999px;color:var(--muted);transition:background .2s,color .2s}
+header.top a:hover{background:var(--soft);color:var(--ink)}
+.hero{min-height:100svh;display:flex;align-items:center;padding:6rem 0 3rem}
+.hero .in{max-width:38rem}
+.hero .in>*{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+.hero .in>.role{animation-delay:0s}.hero .in>.lead{animation-delay:.25s}.hero .in>.btns{animation-delay:.35s}
+.role{display:inline-block;border:1px solid var(--line);background:var(--glass);padding:.35rem 1rem;border-radius:999px;font-size:.9rem;font-weight:600;color:var(--accent)}
+h1{font-weight:800;font-size:clamp(2.7rem,8vw,5.5rem);line-height:1;letter-spacing:-.04em;margin:1.25rem 0 1.5rem}
+h1 .l{display:block;perspective:700px}
+h1 .l>span{display:inline-block;transform-origin:50% 100%;transform:rotateX(-100deg);opacity:0;animation:flip .8s cubic-bezier(.2,.8,.2,1) 0s forwards}
+h1 .l:nth-child(2)>span{animation-delay:.1s;color:var(--accent)}
+.lead{color:var(--muted);font-size:1.1rem;max-width:32rem;margin:0 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{padding:.85rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--glass);transition:transform .2s,box-shadow .2s}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--on)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px -10px var(--accent)}
+section{padding:4rem 0}
+h2{font-weight:800;font-size:clamp(1.9rem,4.5vw,2.8rem);letter-spacing:-.03em;line-height:1.1;margin:0 0 .75rem}
+.sub{color:var(--muted);max-width:42rem;margin:0 0 2.25rem}
+.card,.facts li,details{background:var(--glass);border:1px solid var(--line);border-radius:1.25rem}
+.card{padding:1.5rem;transition:transform .15s ease-out,border-color .25s,box-shadow .25s}
+.card:hover{border-color:var(--accent);box-shadow:0 24px 50px -24px var(--accent)}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem}
+.about p{margin:0 0 1rem}.about h3{margin:0 0 .5rem;font-size:1.3rem}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.facts li{padding:.75rem 1.1rem;display:flex;justify-content:space-between;gap:1rem;border-radius:.9rem}
+.facts span{color:var(--muted)}.facts b{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.bars{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.1rem 2.5rem}
+.bar-row .top{display:flex;justify-content:space-between;font-weight:600;margin-bottom:.4rem}
+.bar-row .top span{color:var(--accent)}
+.track{height:.6rem;background:var(--soft);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{background:var(--soft);color:var(--accent);padding:.25rem .7rem;border-radius:999px;font-size:.82rem;font-weight:600}
+.grp{margin:2.5rem 0 1.25rem;font-size:1.3rem;font-weight:800}
+.tl{border-left:2px solid var(--line);margin-left:.5rem;padding-left:2rem;display:grid;gap:2.25rem}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-2.6rem;top:.45rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 4px var(--bg),0 0 16px var(--accent2)}
+.tl .when{color:var(--accent);font-weight:600;font-size:.9rem}
+.tl h4{margin:.15rem 0;font-size:1.2rem}
+.tl .org{color:var(--muted);margin:0 0 .6rem;font-style:italic}
+.tl p.d{margin:0 0 .5rem;color:var(--muted)}
+.tl ul{margin:0;padding-left:1.1rem;color:var(--muted)}.tl li{margin-bottom:.3rem}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.filters button{font:600 .95rem "Sora",sans-serif;padding:.5rem 1.1rem;border-radius:99px;border:1px solid var(--line);background:var(--glass);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1.25rem}
+.grid .card{display:flex;flex-direction:column;gap:.7rem}
+.grid h4{margin:0;font-size:1.1rem}.grid p{margin:0;color:var(--muted);flex:1}
+.grid a{font-weight:600;color:var(--accent);text-decoration:none}.grid a:hover{text-decoration:underline}
+.grid .card.hide{display:none}
+.contact{background:var(--accent);color:var(--on);border-radius:1.75rem;padding:3rem 2.5rem;box-shadow:0 30px 80px -30px var(--accent)}
+.contact h2{color:inherit}.contact .sub{color:inherit;opacity:.88}
+.cl{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.cl a,.cl div{background:rgba(255,255,255,.16);border-radius:1rem;padding:1rem 1.2rem;text-decoration:none;display:block;overflow-wrap:anywhere}
+.cl a:hover{background:rgba(255,255,255,.28)}.cl small{display:block;opacity:.8}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
+.rv{opacity:0;transform:perspective(900px) rotateX(14deg) translateY(36px);transform-origin:50% 100%;transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+@keyframes rise{to{opacity:1;transform:none}}@keyframes flip{to{transform:none;opacity:1}}
+@media (max-width:800px){.about{grid-template-columns:1fr}.contact{padding:2rem 1.5rem}.hero{padding-top:5.5rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .in>*,h1 .l>span,.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@property --p{syntax:"<number>";inherits:false;initial-value:0}
+body{overflow-x:clip}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40vmax 40vmax at 8% 0%,color-mix(in srgb,var(--accent) 36%,transparent),transparent 70%),radial-gradient(36vmax 36vmax at 95% 100%,color-mix(in srgb,var(--accent2) 26%,transparent),transparent 70%),radial-gradient(26vmax 26vmax at 55% 50%,rgba(63,208,224,.13),transparent 70%)}
+.prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:20}
+h1{font-size:clamp(2.9rem,9vw,6.75rem)}
+h1 .l:nth-child(2)>span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.12em}
+h2::after{content:"";display:block;width:3.5rem;height:4px;border-radius:4px;margin-top:.7rem;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.hero .in>.stats{animation-delay:.45s}
+.stats{display:flex;gap:2.25rem;margin-top:2.5rem}
+.stats b{display:block;font-size:2.1rem;font-weight:800;line-height:1}
+.stats span{color:var(--muted);font-size:.9rem}
+.marq{width:100vw;margin:1rem 0 1rem calc(50% - 50vw);overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);background:var(--glass);padding:1rem 0;}
+.marq div{display:inline-block;animation:slide 34s linear infinite}
+.marq span{display:inline-block;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--muted);margin-right:2.5rem}
+.marq span::after{content:"✦";margin-left:2.5rem;color:var(--accent2);font-size:1rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+.card{position:relative;overflow:hidden}
+.card>*{position:relative}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(18rem circle at var(--mx,50%) var(--my,-50%),var(--soft),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.rings{display:grid;grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr));gap:1rem}
+.rc{display:flex;flex-direction:column;align-items:center;gap:.8rem;padding:1.4rem 1rem;font-weight:600;text-align:center}
+.rw{position:relative;width:5.5rem;height:5.5rem}
+.ring{--p:0;position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--accent),var(--accent2) calc(var(--p)*1%),var(--soft) calc(var(--p)*1%));-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 8px),#000 calc(100% - 7px));mask:radial-gradient(farthest-side,transparent calc(100% - 8px),#000 calc(100% - 7px));transition:--p 1.5s cubic-bezier(.2,.8,.2,1)}
+.rw b{position:absolute;inset:0;display:grid;place-items:center;font-size:1.05rem}
+.contact{background:linear-gradient(135deg,var(--accent),var(--accent2))}
+@media (max-width:800px){.stats{gap:1.5rem}}
+@media (prefers-reduced-motion:reduce){.aurora i,.marq div{animation:none!important}.prog{display:none}}
+header.top{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero{position:relative}
+.floats{position:absolute;inset:0;pointer-events:none;--px:0;--py:0}
+.fc{position:absolute;animation:bob 6s ease-in-out infinite}
+.fc i{display:flex;align-items:center;gap:.5rem;font-style:normal;font-weight:600;font-size:.9rem;padding:.55rem 1rem;border-radius:999px;background:var(--glass);border:1px solid var(--line);box-shadow:0 18px 40px -18px var(--accent);transform:translate3d(calc(var(--px)*var(--d)*1px),calc(var(--py)*var(--d)*.7px),0);transition:transform .25s ease-out}
+.fc i::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--accent2);box-shadow:0 0 10px var(--accent2)}
+.fc.c1{right:40%;top:18%;--d:-60}.fc.c2{right:2%;top:46%;--d:80;animation-delay:-2s}.fc.c3{right:32%;bottom:14%;--d:50;animation-delay:-4s}.fc.c4{right:6%;top:15%;--d:-40;animation-delay:-1s}
+@keyframes bob{50%{transform:translateY(-14px)}}
+@media (max-width:980px){.floats{display:none}}
+.vh{height:6.5rem;margin:-1.5rem -1.5rem .35rem;border-radius:1.25rem 1.25rem 0 0;overflow:hidden}
+.vh[data-v="Aplikasi"]{background:radial-gradient(circle at 18% 15%,var(--accent2),transparent 55%),linear-gradient(135deg,var(--accent),#2a1f8f)}
+.vh[data-v="Website"]{background:radial-gradient(circle at 85% 20%,#3FD0E0,transparent 55%),linear-gradient(135deg,#2a1f8f,var(--accent))}
+.vh::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px) 0 0/22px 22px;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
+.card[data-c="Sertifikat"]{border-left:3px solid var(--accent2)}
+header.top nav{position:relative}
+header.top a{position:relative;z-index:1}
+header.top a.on{color:var(--ink)}
+.lg{position:absolute;top:0;bottom:0;left:0;width:0;z-index:0;border-radius:999px;pointer-events:none;
+  background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,.08) 55%),linear-gradient(135deg,color-mix(in srgb,var(--accent) 55%,transparent),color-mix(in srgb,var(--accent2) 35%,transparent));
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.8),inset 0 -6px 12px rgba(255,255,255,.12),0 8px 20px -8px var(--accent)}
+.lg::before{content:"";position:absolute;left:12%;right:30%;top:3px;height:34%;border-radius:999px;background:linear-gradient(rgba(255,255,255,.7),transparent);opacity:.7}
+.lg::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);background-size:250% 100%;background-position:130% 0}
+.lg.moving{filter:url(#wave)}
+.lg.moving::after{animation:sheen .8s ease-out}
+@keyframes sheen{0%{opacity:1;background-position:130% 0}100%{opacity:0;background-position:-30% 0}}
+.rip{position:absolute;width:6rem;height:6rem;margin:-3rem 0 0 -3rem;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(255,255,255,.65),transparent 65%);transform:scale(0);animation:rip .7s ease-out forwards}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+</style>
+
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="prog" id="prog"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header class="top" id="hdr"><nav id="nav" aria-label="Menu utama"><span class="lg" id="lg" aria-hidden="true"></span><a href="#hero">Beranda</a><a href="#about">Tentang Saya</a><a href="#skills">Keahlian</a><a href="#resume">Pengalaman</a><a href="#portfolio">Portofolio</a><a href="#contact">Kontak</a></nav></header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="wave" x="-20%" y="-60%" width="140%" height="220%"><feTurbulence type="fractalNoise" baseFrequency=".035 .06" numOctaves="1" seed="3" result="n"/><feDisplacementMap id="dm" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+
+<main class="wrap">
+  <div class="hero" id="hero"><div class="floats" aria-hidden="true"><div class="fc c1"><i>NestJS</i></div><div class="fc c2"><i>Golang</i></div><div class="fc c3"><i>PostgreSQL</i></div><div class="fc c4"><i>Docker</i></div></div><div class="in">
+      <span class="role">Backend Engineer</span>
+      <h1><span class="l"><span>Muhammad</span></span><span class="l"><span>Faqih Maulana</span></span></h1>
+      <p class="lead">Lulusan Teknik Informatika yang memiliki minat dan pengalaman dalam pengembangan aplikasi backend dan web.</p>
+      <div class="btns">
+        <a class="btn p" href="https://www.linkedin.com/in/muhammad-faqih-maulana-53907a23a/" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/faqihmaulana" rel="noopener">GitHub</a>
+      </div>
+      <div class="stats"><div><b data-n="6">0</b><span>Proyek</span></div><div><b data-n="22">0</b><span>Sertifikat</span></div><div><b data-n="10">0</b><span>Keahlian</span></div></div>
+    </div></div>
+
+  <div class="marq" aria-hidden="true"><div><span>NestJS</span><span>Golang</span><span>Laravel</span><span>Flask</span><span>PostgreSQL</span><span>MySQL</span><span>Prisma ORM</span><span>Swagger</span><span>Docker</span><span>Git</span><span>TypeScript</span><span>Python</span><span>NestJS</span><span>Golang</span><span>Laravel</span><span>Flask</span><span>PostgreSQL</span><span>MySQL</span><span>Prisma ORM</span><span>Swagger</span><span>Docker</span><span>Git</span><span>TypeScript</span><span>Python</span></div></div>
+
+  <section id="about" class="rv">
+    <h2>Tentang Saya</h2>
+    <p class="sub">Lulusan Program Studi Teknik Informatika Universitas Harkat Negeri dengan pengalaman magang sebagai Backend Engineer. Memiliki pengalaman dalam pengembangan aplikasi berbasis web, pengembangan RESTful API, pengelolaan basis data, serta integrasi sistem. Terbiasa menggunakan Laravel, NestJS, Golang, Flask, PostgreSQL, MySQL, Prisma ORM, Swagger, dan Git dalam proses pengembangan aplikasi.</p>
+    <div class="about">
+      <div>
+        <h3>Backend Engineer &amp; Web Developer</h3>
+        <p>Lulusan Teknik Informatika yang memiliki minat dan pengalaman dalam pengembangan aplikasi backend dan web.</p>
+        <p>Memiliki ketertarikan pada pengembangan backend dan aplikasi web, dengan pengalaman menggunakan Laravel, NestJS, Golang, Flask, PostgreSQL, MySQL, RESTful API, Prisma ORM, Swagger, dan Git. Memiliki kemampuan analitis, pemecahan masalah, serta mampu bekerja secara individu maupun dalam tim.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Tanggal Lahir</span><b>03 Agustus 2003</b></li>
+        <li><span>Usia</span><b>22 Tahun</b></li>
+        <li><span>Telepon</span><b>+62 895-3373-65528</b></li>
+        <li><span>Pendidikan</span><b>D4 Teknik Informatika</b></li>
+        <li><span>Domisili</span><b>Bekasi, Jawa Barat</b></li>
+        <li><span>Email</span><b>faqihmaulana936@gmail.com</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills" class="rv">
+    <h2>Keahlian</h2>
+    <p class="sub">Memiliki kemampuan dalam pengembangan aplikasi web dan backend, pengelolaan basis data, serta penggunaan berbagai teknologi pendukung pengembangan perangkat lunak.</p>
+    <div class="rings" id="bars"></div>
+  </section>
+
+  <section id="resume" class="rv">
+    <h2>Pengalaman &amp; Pendidikan</h2>
+    <p class="sub">Pengalaman akademik, profesional, dan proyek yang relevan dengan bidang pengembangan aplikasi dan backend.</p>
+
+    <div class="grp">Proyek Akademik</div>
+    <div class="tl"><article><h4>Capstone Project – House Stunting Application</h4>
+      <p class="d">Proyek pengembangan aplikasi untuk membantu proses deteksi dan pemantauan stunting melalui aplikasi mobile dan web.</p>
+      <ul><li>Mengembangkan antarmuka aplikasi mobile menggunakan Dart dan Flutter.</li><li>Mengembangkan backend aplikasi web menggunakan Python dan Flask.</li><li>Melakukan pengujian aplikasi menggunakan Selenium IDE.</li></ul></article></div>
+
+    <div class="grp">Pendidikan</div>
+    <div class="tl">
+      <article><span class="when">2021 – 2026</span><h4>D4 Teknik Informatika</h4><p class="org">Universitas Harkat Negeri</p>
+        <p class="d"><b>IPK: 3,18 / 4,00</b></p>
+        <p class="d">Mempelajari pengembangan perangkat lunak, pengembangan web, basis data, algoritma dan struktur data, jaringan komputer, keamanan jaringan, serta cloud computing.</p></article>
+      <article><span class="when">2018 – 2021</span><h4>Multimedia</h4><p class="org">SMK Karya Bhakti Brebes</p>
+        <p class="d">Mempelajari desain grafis, pengeditan video, animasi, dan produksi konten multimedia.</p></article>
+    </div>
+
+    <div class="grp">Pengalaman Profesional</div>
+    <div class="tl">
+      <article><span class="when">Agustus 2024 – Desember 2024</span><h4>Backend Engineer Intern</h4><p class="org">PT Sahaware Teknologi Indonesia</p>
+        <ul><li>Mengembangkan dan mengelola RESTful API menggunakan NestJS dan TypeScript.</li><li>Mengelola PostgreSQL sebagai basis data serta merancang struktur data sesuai kebutuhan aplikasi.</li><li>Mengelola skema dan migrasi basis data menggunakan Prisma ORM.</li><li>Menyusun dokumentasi API menggunakan Swagger untuk mendukung proses pengujian dan integrasi antartim.</li><li>Menggunakan Docker untuk mendukung proses containerisasi aplikasi dan pengembangan pada berbagai environment.</li><li>Melakukan debugging, perbaikan bug, dan penyempurnaan fitur selama proses pengembangan aplikasi.</li></ul></article>
+      <article><span class="when">Februari 2024 – Juni 2024</span><h4>Program Studi Independen – AI Integration in Backend Engineering</h4><p class="org">PT Ruang Raya Indonesia (Ruangguru)</p>
+        <ul><li>Mengumpulkan dan menyiapkan dataset motif batik untuk kebutuhan proyek akhir.</li><li>Mengelompokkan dataset berdasarkan kategori dan asal daerah motif batik.</li><li>Mengembangkan antarmuka web yang responsif menggunakan HTML, CSS, JavaScript, dan Tailwind CSS.</li><li>Mengembangkan fitur backend menggunakan Golang.</li><li>Berkontribusi dalam penyusunan laporan akhir program Studi Independen.</li></ul></article>
+      <article><span class="when">Agustus 2022 – Maret 2026</span><h4>Replenishment (Freelance)</h4><p class="org">PT Absolute Service Nusantara</p>
+        <ul><li>Melakukan replenishment barang dari area penyimpanan ke area display untuk memastikan ketersediaan produk.</li><li>Memastikan area display tetap rapi, lengkap, dan sesuai dengan standar perusahaan.</li><li>Memantau ketersediaan stok dan melakukan pengisian ulang secara tepat waktu.</li><li>Berkoordinasi dengan tim gudang untuk memastikan proses pengisian ulang stok berjalan dengan lancar dan akurat.</li></ul></article>
+    </div>
+  </section>
+
+  <section id="portfolio" class="rv">
+    <h2>Portofolio</h2>
+    <p class="sub">Berikut adalah beberapa proyek yang pernah saya kerjakan, meliputi aplikasi web, aplikasi mobile, serta sertifikasi dan pencapaian.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter portofolio">
+      <button data-f="all" aria-pressed="true">Semua</button><button data-f="Aplikasi" aria-pressed="false">Aplikasi</button><button data-f="Website" aria-pressed="false">Website</button><button data-f="Sertifikat" aria-pressed="false">Sertifikat</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="contact" class="rv">
+    <div class="contact">
+      <h2>Kontak</h2>
+      <p class="sub">Silakan hubungi saya melalui informasi kontak berikut untuk keperluan profesional atau peluang kerja sama.</p>
+      <div class="cl">
+        <div><small>Domisili</small>Perwira, Bekasi Utara, Kota Bekasi, Jawa Barat</div>
+        <a href="tel:+62895337365528"><small>Telepon</small>+62 895-3373-65528</a>
+        <a href="mailto:faqihmaulana936@gmail.com"><small>Email</small>faqihmaulana936@gmail.com</a>
+        <a href="https://www.linkedin.com/in/muhammad-faqih-maulana-53907a23a/" rel="noopener"><small>LinkedIn</small>linkedin.com/in/muhammad-faqih-maulana</a>
+        <a href="https://github.com/faqihmaulana" rel="noopener"><small>GitHub</small>github.com/faqihmaulana</a>
+        <a href="https://porto-faqih.vercel.app/" rel="noopener"><small>Website Portofolio</small>porto-faqih.vercel.app</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 <b>Muhammad Faqih Maulana</b> All Rights Reserved</div></footer>
+
+<script>
+var skills=[["HTML",80],["CSS",70],["JavaScript",75],["Python",70],["Golang",70],["Flask",80],["Laravel",70],["NestJS",80],["SQL",80],["Tailwind CSS",55]];
+var G="https://github.com/faqihmaulana/";
+var items=[
+["Aplikasi","House Stunting – Mobile Application","Aplikasi mobile untuk mendukung sistem deteksi dan pemantauan stunting.",G+"MobileStunting"],
+["Website","House Stunting Application","Aplikasi web untuk prediksi stunting, chatbot, dan fitur pengukuran tinggi badan.",G+"ApkStunting"],
+["Sertifikat","Mathematics for Computing","Sertifikat pelatihan dari Bisa AI."],
+["Aplikasi","Sistem Manajemen Belanja","Aplikasi untuk memantau aktivitas belanja dengan backend berbasis Golang.",G+"Mobile-Vixy"],
+["Website","Batikku","Aplikasi web untuk deteksi motif batik melalui pemanggilan API Flask serta chatbot berbasis Gemini dari Google.",G+"Batikku"],
+["Sertifikat","LO Kreatif 2021","Finalis Lomba Nasional LO Kreatif 2021."],
+["Aplikasi","Mobile E-Commerce","Aplikasi mobile e-commerce yang menggunakan Strapi sebagai backend dan CMS.",G+"Mobile-Strapi"],
+["Website","Sistem SPK Balita","Aplikasi berbasis web untuk mendukung perhitungan Sistem Pendukung Keputusan (SPK) menggunakan Laravel.",G+"laravell-spk"],
+["Sertifikat","RNNs for Language Modeling with Keras","Sertifikat pelatihan dari DataCamp."],
+["Sertifikat","GitHub Foundations","Sertifikat terkait GitHub dan version control."],
+["Sertifikat","Backend Engineer Internship","PT Sahaware Teknologi Indonesia."],
+["Sertifikat","Analyzing US Census Data in Python","Sertifikat pelatihan dari DataCamp."],
+["Sertifikat","Intermediate R","Sertifikat pelatihan dari DataCamp."],
+["Sertifikat","Introduction R","Sertifikat pelatihan dari DataCamp."],
+["Sertifikat","Introduction to the Tidyverse","Sertifikat pelatihan dari DataCamp."],
+["Sertifikat","Great Learning","Sertifikat pelatihan."],
+["Sertifikat","Hour of Code – Web Version","Sertifikat penyelesaian pembelajaran pemrograman berbasis web."],
+["Sertifikat","Huawei Certification","Sertifikasi Huawei di bidang jaringan dan teknologi informasi."],
+["Sertifikat","Associate Data Engineer","Sertifikasi kompetensi di bidang data engineering."],
+["Sertifikat","Keterampilan Inti","Sertifikat program Studi Independen."],
+["Sertifikat","Rekayasa Perangkat Lunak","Sertifikat program Studi Independen."],
+["Sertifikat","Pemrograman Backend Dasar","Sertifikat program Studi Independen."],
+["Sertifikat","Pemrograman Backend Lanjutan dengan Golang","Sertifikat program Studi Independen."],
+["Sertifikat","Aplikasi Web Berbasis Golang","Sertifikat program Studi Independen."],
+["Sertifikat","Sistem Manajemen dan Teknologi Basis Data","Sertifikat program Studi Independen."],
+["Sertifikat","Artificial Intelligence Menggunakan Golang","Sertifikat program Studi Independen."],
+["Sertifikat","Kepesertaan MSIB","Sertifikat kepesertaan program MSIB."],
+["Sertifikat","Kelulusan MSIB x Ruangguru","Sertifikat kelulusan program MSIB."]
+];
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+document.getElementById("bars").innerHTML=skills.map(function(s){return '<div class="card rc"><div class="rw"><div class="ring" data-p="'+s[1]+'"></div><b>'+s[1]+'%</b></div>'+s[0]+'</div>'}).join("");
+document.getElementById("grid").innerHTML=items.map(function(i){return '<div class="card" data-c="'+i[0]+'">'+(i[0]==="Sertifikat"?'':'<div class="vh" data-v="'+i[0]+'"></div>')+'<div class="chips"><span>'+i[0]+'</span></div><h4>'+esc(i[1])+'</h4><p>'+esc(i[2])+'</p>'+(i[3]?'<a href="'+i[3]+'" rel="noopener">Lihat di GitHub</a>':'')+'</div>'}).join("");
+document.getElementById("filters").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+  document.querySelectorAll("#filters button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+  document.querySelectorAll("#grid .card").forEach(function(c){c.classList.toggle("hide",b.dataset.f!=="all"&&c.dataset.c!==b.dataset.f)})});
+var rv=document.querySelectorAll(".rv");
+function show(t){t.classList.add("on");t.querySelectorAll(".ring").forEach(function(f){f.style.setProperty("--p",f.dataset.p)})}
+if(!("IntersectionObserver" in window)){rv.forEach(show)}else{
+var o=new IntersectionObserver(function(s){s.forEach(function(i){if(i.isIntersecting){show(i.target);o.unobserve(i.target)}})},{rootMargin:"0px 0px 120px 0px"});rv.forEach(function(x){o.observe(x)})}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var lite=(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4||innerWidth<700;
+  document.querySelectorAll("[data-n]").forEach(function(el){
+    var to=+el.dataset.n;if(reduce){el.textContent=to;return}
+    var t0=null;setTimeout(function(){requestAnimationFrame(function s(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/900);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(s)})},250);
+  });
+  var max=1,prog=document.getElementById("prog"),fl=document.querySelector(".floats");
+  function meas(){max=Math.max(1,document.documentElement.scrollHeight-innerHeight)}
+  function scrollP(){return Math.min(1,scrollY/max)}
+  function upd(){prog.style.transform="scaleX("+scrollP()+")"}
+  meas();upd();
+  addEventListener("scroll",upd,{passive:true});addEventListener("resize",meas);
+  if("ResizeObserver" in window)new ResizeObserver(meas).observe(document.body);
+  var tx=0,ty=0,ev=null,pend=false,cur=null,hover=!reduce&&matchMedia("(hover:hover)").matches;
+  function onMove(){
+    pend=false;if(!ev)return;
+    if(fl){fl.style.setProperty("--px",tx.toFixed(3));fl.style.setProperty("--py",ty.toFixed(3))}
+    var c=ev.target.closest?ev.target.closest(".card"):null;
+    if(cur&&cur!==c)cur.style.transform="";
+    cur=c;if(!c)return;
+    var b=c.getBoundingClientRect(),x=(ev.clientX-b.left)/b.width,y=(ev.clientY-b.top)/b.height;
+    c.style.setProperty("--mx",x*100+"%");c.style.setProperty("--my",y*100+"%");
+    c.style.transform="perspective(800px) rotateX("+(-(y-.5)*10)+"deg) rotateY("+((x-.5)*10)+"deg) translateY(-3px)";
+  }
+  addEventListener("pointermove",function(e){
+    tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;
+    if(hover){ev=e;if(!pend){pend=true;requestAnimationFrame(onMove)}}
+  },{passive:true});
+
+  function init3D(){
+    if(typeof THREE==="undefined")return;
+    var cv=document.getElementById("gl"),r;
+    try{r=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:!lite,powerPreference:"high-performance"})}catch(e){return}
+    var dpr=lite?1:Math.min(window.devicePixelRatio||1,1.5);r.setPixelRatio(dpr);
+    var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,1,.1,100);cam.position.z=8;
+    var cs=getComputedStyle(document.documentElement);
+    function C(n){return new THREE.Color(cs.getPropertyValue(n).trim())}
+    var A=C("--accent"),B=C("--accent2"),bg=C("--bg");
+    var dark=(bg.r*.299+bg.g*.587+bg.b*.114)<.35,BL=dark?THREE.AdditiveBlending:THREE.NormalBlending;
+    var g=new THREE.Group();sc.add(g);
+
+    // bola kaca dengan tepi bercahaya (fresnel)
+    var seg=lite?32:48;
+    var glass=new THREE.Mesh(new THREE.SphereGeometry(2.1,seg,seg),new THREE.ShaderMaterial({
+      uniforms:{a:{value:A},b:{value:B}},transparent:true,depthWrite:false,blending:BL,
+      vertexShader:"varying vec3 n;varying vec3 v;void main(){n=normalize(normalMatrix*normal);vec4 p=modelViewMatrix*vec4(position,1.);v=normalize(-p.xyz);gl_Position=projectionMatrix*p;}",
+      fragmentShader:"uniform vec3 a;uniform vec3 b;varying vec3 n;varying vec3 v;void main(){float f=pow(1.-abs(dot(n,v)),2.2);gl_FragColor=vec4(mix(a,b,f),f*.85+.04);}"
+    }));
+    var ico=new THREE.Mesh(new THREE.IcosahedronGeometry(1.5,1),new THREE.MeshBasicMaterial({color:A,wireframe:true,transparent:true,opacity:.85}));
+    var core=new THREE.Mesh(new THREE.OctahedronGeometry(.7,0),new THREE.MeshBasicMaterial({color:B,wireframe:true}));
+    var cvs=document.createElement("canvas");cvs.width=cvs.height=64;var x=cvs.getContext("2d"),gr=x.createRadialGradient(32,32,0,32,32,32);
+    gr.addColorStop(0,"rgba(255,255,255,.95)");gr.addColorStop(.25,"rgba(255,255,255,.35)");gr.addColorStop(1,"rgba(255,255,255,0)");x.fillStyle=gr;x.fillRect(0,0,64,64);
+    var glow=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cvs),color:B,transparent:true,opacity:dark?.8:.45,depthWrite:false,blending:BL}));glow.scale.set(5,5,1);
+    g.add(glass,ico,core,glow);
+
+    // satelit yang mengorbit
+    var orbits=[],i,N=lite?5:7;
+    var tg=new THREE.OctahedronGeometry(.13),sg=new THREE.SphereGeometry(.09,12,12),mA=new THREE.MeshBasicMaterial({color:A}),mB=new THREE.MeshBasicMaterial({color:B});
+    for(i=0;i<N;i++){
+      var pv=new THREE.Group(),rad=2.7+i*.28;pv.rotation.set(Math.random()*3,Math.random()*3,0);
+      var ln=new THREE.Mesh(new THREE.TorusGeometry(rad,.006,4,90),new THREE.MeshBasicMaterial({color:i%2?A:B,transparent:true,opacity:.45}));ln.rotation.x=Math.PI/2;pv.add(ln);
+      var sp=new THREE.Mesh(i%2?tg:sg,i%2?mB:mA);sp.position.x=rad;
+      var arm=new THREE.Group();arm.add(sp);pv.add(arm);g.add(pv);orbits.push({arm:arm,s:.4+Math.random()*.6,o:Math.random()*6});
+    }
+    // partikel dua warna
+    var n=lite?350:650,p=new Float32Array(n*3),col=new Float32Array(n*3),rd,th,ph,c;
+    for(i=0;i<n;i++){rd=4+Math.random()*10;th=Math.random()*6.283;ph=Math.acos(2*Math.random()-1);
+      p[i*3]=rd*Math.sin(ph)*Math.cos(th);p[i*3+1]=rd*Math.sin(ph)*Math.sin(th);p[i*3+2]=rd*Math.cos(ph)-2;
+      c=Math.random()<.5?A:B;col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b}
+    var geo=new THREE.BufferGeometry();geo.setAttribute("position",new THREE.BufferAttribute(p,3));geo.setAttribute("color",new THREE.BufferAttribute(col,3));
+    var pts=new THREE.Points(geo,new THREE.PointsMaterial({size:.06,vertexColors:true,transparent:true,opacity:.85,depthWrite:false,blending:BL}));sc.add(pts);
+
+    var mx=0,my=0,wide=true,last=0,acc=0,cnt=0;
+    function size(){var w=innerWidth,h=innerHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();wide=w/h>1.15;g.scale.setScalar(wide?1:.68)}
+    function frame(t){
+      var sy=scrollP();
+      mx+=(tx-mx)*.05;my+=(ty-my)*.05;
+      ico.rotation.y=t*.0004;ico.rotation.x=t*.0003;core.rotation.y=-t*.0008;core.rotation.z=t*.0005;
+      glow.material.opacity=(dark?.8:.45)+Math.sin(t*.002)*.1;
+      for(var k=0;k<orbits.length;k++){var o=orbits[k];o.arm.rotation.y=o.o+t*.0007*o.s}
+      pts.rotation.y=t*.00005+sy*1.5;
+      g.rotation.x=sy*5+my*.5;g.rotation.y=sy*3+mx*.6;
+      g.position.y=-sy*1.2+Math.sin(t*.0011)*.12;g.position.x=wide?3.3-sy*2.8:0;
+      cam.position.z=8+Math.sin(sy*Math.PI)*1.5;
+      r.render(sc,cam);
+      if(last){acc+=t-last;cnt++;if(cnt===45){var avg=acc/cnt;
+        if(avg>28&&dpr>1){dpr=1;r.setPixelRatio(1);size()}
+        else if(avg>40){pts.visible=false;glow.visible=false}
+        acc=0;cnt=0}}
+      last=t;
+      if(!reduce)requestAnimationFrame(frame);
+    }
+    addEventListener("resize",function(){size();if(reduce)frame(0)});
+    if(reduce)addEventListener("scroll",function(){frame(0)},{passive:true});
+    size();requestAnimationFrame(frame);
+  }
+  if(document.readyState==="complete")init3D();else addEventListener("load",init3D);
+})();
+</script>
+<script>
+(function(){
+  var nav=document.getElementById("nav"),lg=document.getElementById("lg"),dm=document.getElementById("dm"),
+      links=[].slice.call(nav.querySelectorAll("a")),cur=-1,lock=0,anim=null,
+      reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function rect(i){var a=links[i];return{l:a.offsetLeft,w:a.offsetWidth}}
+  function put(i){var r=rect(i);lg.style.left=r.l+"px";lg.style.width=r.w+"px"}
+  function center(i){var a=links[i];if(nav.scrollWidth>nav.clientWidth)nav.scrollTo({left:a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2,behavior:reduce?"auto":"smooth"})}
+  // tepi kaca bergelombang sementara indikator bergerak
+  function wave(ms){
+    var t0=null;lg.classList.add("moving");
+    requestAnimationFrame(function s(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/ms);
+      dm.setAttribute("scale",(15*Math.sin(Math.PI*k)*(1-k*.3)).toFixed(2));
+      if(k<1)requestAnimationFrame(s);else{dm.setAttribute("scale","0");lg.classList.remove("moving")}});
+  }
+  function go(i,instant){
+    if(i===cur)return;
+    var from=cur<0?null:rect(cur),to=rect(i);
+    links.forEach(function(a,j){a.classList.toggle("on",j===i);if(j===i)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")});
+    put(i);cur=i;center(i);
+    if(instant||!from||reduce||!lg.animate)return;
+    // cairan memanjang ke tujuan, menyusut, lalu memantul pelan
+    var l=Math.min(from.l,to.l),r=Math.max(from.l+from.w,to.l+to.w),ov=Math.min(14,(r-l)*.06);
+    if(anim)anim.cancel();
+    anim=lg.animate([
+      {left:from.l+"px",width:from.w+"px",transform:"scale(1,1)",easing:"cubic-bezier(.2,.7,.3,1)"},
+      {left:(l-ov)+"px",width:(r-l+ov*2)+"px",transform:"scale(1,.8)",offset:.4,easing:"cubic-bezier(.3,1.5,.5,1)"},
+      {left:to.l+"px",width:to.w+"px",transform:"scale(1,1)"}
+    ],{duration:720});
+    wave(720);
+  }
+  links.forEach(function(a,i){
+    a.addEventListener("click",function(e){
+      lock=Date.now()+1100;go(i);
+      if(!reduce){var b=nav.getBoundingClientRect(),s=document.createElement("span");s.className="rip";
+        s.style.left=(e.clientX-b.left+nav.scrollLeft)+"px";s.style.top=(e.clientY-b.top)+"px";
+        nav.appendChild(s);setTimeout(function(){s.remove()},750)}
+    });
+  });
+  // indikator ikut bagian halaman yang sedang dilihat
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting||Date.now()<lock)return;
+      var i=links.findIndex(function(a){return a.getAttribute("href")==="#"+e.target.id});if(i>-1)go(i);
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    links.forEach(function(a){var t=document.getElementById(a.getAttribute("href").slice(1));if(t)io.observe(t)});
+  }
+  go(0,true);
+  addEventListener("resize",function(){put(cur)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){put(cur)});
+})();
+</script>
+
+</body>
+</html>
