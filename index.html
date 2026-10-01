@@ -11,9 +11,9 @@
 <style>
 :root{
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
-  --bg:#F2EFFF;--ink:#17133A;--muted:#5E5990;--glass:rgba(255,255,255,.84);--line:rgba(90,70,210,.2);--accent:#6A55F5;--accent2:#F0604F;--soft:rgba(106,85,245,.12);--on:#fff;
+  --bg:#F2EFFF;--ink:#17133A;--muted:#5E5990;--glass:rgba(255,255,255,.28);--line:rgba(90,70,210,.2);--accent:#6A55F5;--accent2:#F0604F;--soft:rgba(106,85,245,.12);--on:#fff;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C0A1F;--ink:#F1EEFF;--muted:#A9A3C9;--glass:rgba(24,20,60,.8);--line:rgba(160,150,255,.22);--accent:#9A8BFF;--accent2:#FF7A6B;--soft:rgba(154,139,255,.16);--on:#0C0A1F}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C0A1F;--ink:#F1EEFF;--muted:#A9A3C9;--glass:rgba(24,20,60,.28);--line:rgba(160,150,255,.22);--accent:#9A8BFF;--accent2:#FF7A6B;--soft:rgba(154,139,255,.16);--on:#0C0A1F}}
 :root[data-theme="dark"]{--bg:#0C0A1F;--ink:#F1EEFF;--muted:#A9A3C9;--glass:rgba(24,20,60,.8);--line:rgba(160,150,255,.22);--accent:#9A8BFF;--accent2:#FF7A6B;--soft:rgba(154,139,255,.16);--on:#0C0A1F}
 html{height:100%;scroll-padding-top:5rem;scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
@@ -23,7 +23,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 main,footer{position:relative;z-index:1}
 .wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
-header.top{position:fixed;z-index:10;top:calc(env(safe-area-inset-top,0px) + .75rem);left:50%;transform:translateX(-50%);max-width:calc(100% - 1.5rem);background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:.35rem .5rem}
+header.top{position:fixed;z-index:10;top:calc(env(safe-area-inset-top,0px) + .75rem);left:50%;transform:translateX(-50%);max-width:calc(100% - 1.5rem);background:linear-gradient(135deg,rgba(255,255,255,.20),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.34);border-radius:999px;padding:.35rem .5rem;box-shadow:inset 0 1px 1px rgba(255,255,255,.42),0 12px 35px -20px var(--accent);backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%)}
 header.top nav{display:flex;gap:.15rem;overflow-x:auto;scrollbar-width:none}
 header.top nav::-webkit-scrollbar{display:none}
 header.top a{white-space:nowrap;text-decoration:none;font-size:.88rem;padding:.45rem .9rem;border-radius:999px;color:var(--muted);transition:background .2s,color .2s}
@@ -116,7 +116,7 @@ h2::after{content:"";display:block;width:3.5rem;height:4px;border-radius:4px;mar
 .contact{background:linear-gradient(135deg,var(--accent),var(--accent2))}
 @media (max-width:800px){.stats{gap:1.5rem}}
 @media (prefers-reduced-motion:reduce){.aurora i,.marq div{animation:none!important}.prog{display:none}}
-header.top{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+header.top{backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%)}
 .hero{position:relative}
 .floats{position:absolute;inset:0;pointer-events:none;--px:0;--py:0}
 .fc{position:absolute;animation:bob 6s ease-in-out infinite}
@@ -144,7 +144,29 @@ header.top a.on{color:var(--ink)}
 @keyframes sheen{0%{opacity:1;background-position:130% 0}100%{opacity:0;background-position:-30% 0}}
 .rip{position:absolute;width:6rem;height:6rem;margin:-3rem 0 0 -3rem;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(255,255,255,.65),transparent 65%);transform:scale(0);animation:rip .7s ease-out forwards}
 @keyframes rip{to{transform:scale(1);opacity:0}}
-</style>
+<style>
+/* Ultra-clear Liquid Glass + tactile interaction */
+:root{--glass:rgba(255,255,255,.24)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--glass:rgba(18,15,45,.24)}}
+:root[data-theme="dark"]{--glass:rgba(18,15,45,.24)}
+.card,.facts li,details,.btn,.role,.filters button,.fc i,.marq{
+  background:linear-gradient(135deg,rgba(255,255,255,.17),rgba(255,255,255,.045));
+  border-color:rgba(255,255,255,.30);
+  backdrop-filter:blur(22px) saturate(155%);
+  -webkit-backdrop-filter:blur(22px) saturate(155%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.08),0 18px 45px -28px rgba(80,65,220,.5);
+}
+.card,.btn,.filters button,.fc i{will-change:transform,filter;overflow:hidden}
+.liquid-ripple{position:fixed;z-index:9999;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;pointer-events:none;
+ background:radial-gradient(circle,rgba(255,255,255,.55) 0,rgba(255,255,255,.18) 22%,rgba(130,110,255,.12) 42%,transparent 70%);
+ border:1px solid rgba(255,255,255,.45);filter:blur(.2px);transform:scale(.15);opacity:.9;
+ animation:liquidPress .72s cubic-bezier(.16,.8,.3,1) forwards;
+}
+@keyframes liquidPress{0%{transform:scale(.15);opacity:.9}45%{transform:scale(1.15,.78);opacity:.7}72%{transform:scale(1.65,1.15);opacity:.28}100%{transform:scale(2.05);opacity:0}}
+.liquid-press{animation:liquidTap .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes liquidTap{0%{transform:scale(1)}35%{transform:scale(.965);filter:brightness(1.14) saturate(1.2)}65%{transform:scale(1.018)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.liquid-ripple,.liquid-press{animation:none!important}}
+</style></style>
 
 </head>
 <body>
@@ -448,5 +470,18 @@ var o=new IntersectionObserver(function(s){s.forEach(function(i){if(i.isIntersec
 })();
 </script>
 
-</body>
+<script>
+(function(){
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  document.addEventListener("pointerdown",function(e){
+    const target=e.target.closest("a,button,.card,.role,.fc i");
+    if(!target||reduce)return;
+    target.classList.remove("liquid-press"); void target.offsetWidth; target.classList.add("liquid-press");
+    const r=document.createElement("span"); r.className="liquid-ripple";
+    r.style.left=e.clientX+"px"; r.style.top=e.clientY+"px";
+    document.body.appendChild(r); setTimeout(()=>r.remove(),760);
+    setTimeout(()=>target.classList.remove("liquid-press"),520);
+  },{passive:true});
+})();
+</script></body>
 </html>
